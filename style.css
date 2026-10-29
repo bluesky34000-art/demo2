@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1. 상단 마스트헤드 */
+.main-header {
+    width: 100%;
+    background-color: white;
+    padding: 15px 0;
+}
+
+#masthead {
+    border: 4px solid goldenrod;
+    width: 650px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    background-color: white;
+}
+
+#masthead h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.5rem;
+    color: #111;
+    font-weight: normal;
+}
+
+#masthead .masthead-icon {
+    width: 60px;
+    height: auto;
+    display: block;
+}
+
+/* 2. 네비게이션 바 (기본: PC 화면) */
+.navbar {
+    background-color: black;
+    width: 100%;
+    position: relative;
+}
+
+/* 체크박스 화면 숨김 */
+.menu-btn {
+    display: none;
+}
+
+/* PC에서는 햄버거 라벨 아이콘 숨김 */
+.menu-icon {
+    display: none;
+    color: whitesmoke;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px 20px;
+    user-select: none;
+}
+
+/* PC용 가로 메뉴 */
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-links a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: goldenrod;
+}
+
+/* 3. 메인 콘텐츠 섹션 */
+.topsection {
+    background-color: seagreen;
+    min-height: 520px;
+    padding: 20px 15px 15px 15px;
+}
+
+.topsection h2 {
+    text-align: center;
+    color: skyblue;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content-box {
+    display: flex;
+    height: 430px;
+    gap: 15px;
+}
+
+.content-box div {
+    background-color: skyblue;
+    flex: 1;
+    height: 100%;
+}
+
+/* 4. 모바일 반응형 미디어 쿼리 (창 폭 768px 이하) */
+@media (max-width: 768px) {
+    #masthead {
+        width: 95%;
+        height: auto;
+        padding: 10px 15px;
+    }
+
+    #masthead h1 {
+        font-size: 1.8rem;
+    }
+
+    #masthead .masthead-icon {
+        width: 48px;
+    }
+
+    /* 햄버거 아이콘 우측 노출 */
+    .menu-icon {
+        display: block;
+        text-align: right;
+    }
+
+    /* 모바일 기본 상태: 메뉴 목록을 숨겨둠 */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+        padding: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #333;
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+    }
+
+    /* 핵심 트릭: 체크박스가 체크되면(.menu-btn:checked) 바로 뒤의 메뉴(.nav-links)를 펼쳐서 표시 */
+    .menu-btn:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* 본문 세로 정렬 */
+    .topsection {
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    .content-box {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .content-box div {
+        width: 100%;
+        height: 260px;
+        min-height: 260px;
+    }
+}
